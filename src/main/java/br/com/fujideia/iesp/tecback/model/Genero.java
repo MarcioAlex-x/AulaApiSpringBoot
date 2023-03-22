@@ -13,6 +13,6 @@ import lombok.Setter;
 public class Genero {
 
     @Id
-    private int id;
+    private Integer id;
 
 }
