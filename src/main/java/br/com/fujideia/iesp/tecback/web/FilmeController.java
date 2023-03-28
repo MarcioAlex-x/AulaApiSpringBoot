@@ -5,10 +5,7 @@ import br.com.fujideia.iesp.tecback.service.FilmeService;
 import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,4 +25,11 @@ private FilmeService service;
     public ResponseEntity<List<Filme>> listar(){
         return ResponseEntity.ok(service.listar());
     }
+
+    @DeleteMapping
+    public ResponseEntity<Filme> excluir(Filme filme){
+        filme = service.excluir(filme);
+        return ResponseEntity.ok(filme);
+    }
+
 }
