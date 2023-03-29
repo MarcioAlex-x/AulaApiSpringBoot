@@ -17,17 +17,18 @@ public class FilmeController {
 private FilmeService service;
 
     @PostMapping
-    public ResponseEntity<Filme> salvar(Filme filme){
+    public ResponseEntity<Filme> salvar(@RequestBody Filme filme){
         filme = service.salvar(filme);
         return ResponseEntity.ok(filme);
     }
     @GetMapping
     public ResponseEntity<List<Filme>> listar(){
+
         return ResponseEntity.ok(service.listar());
     }
 
     @DeleteMapping
-    public ResponseEntity<Filme> excluir(Filme filme){
+    public ResponseEntity<Boolean> excluir(Filme filme){
         filme = service.excluir(filme);
         return ResponseEntity.ok(filme);
     }

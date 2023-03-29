@@ -30,7 +30,7 @@ public class SerieController {
 
     @DeleteMapping
     public ResponseEntity<Serie> excluir(Serie serie){
-        filme = service.excluir(serie);
+        serie = service.excluir(serie);
         return ResponseEntity.ok(serie);
     }
 }

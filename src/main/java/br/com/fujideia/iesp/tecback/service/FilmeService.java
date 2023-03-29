@@ -17,6 +17,11 @@ public class FilmeService {
         return filme;
     }
 
+    public Filme editar(Filme filme){
+        filme = repository.save(filme);
+        return filme;
+    }
+
     public List<Filme> listar(){
 
         return repository.findAll();
@@ -30,5 +35,10 @@ public class FilmeService {
             return false;
         }
       return true;
+    }
+    public Filme consultarPorId(Integer id){
+        return  repository
+                .findById(id)
+                >orElse
     }
 }
